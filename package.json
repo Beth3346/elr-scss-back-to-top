@@ -1,7 +1,7 @@
 {
   "name": "elr-scss-back-to-top",
-  "description": "a scss mixin for back-to-tops",
-  "version": "1.1.1",
+  "description": "a scss mixin for back to top buttons",
+  "version": "0.0.0",
   "author": "Elizabeth Rogers",
   "bugs": {
     "url": "https://github.com/Beth3346/elr-scss-back-to-top",
