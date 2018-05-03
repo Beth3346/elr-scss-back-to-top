@@ -25,7 +25,7 @@
   "homepage": "http://www.elizabeth-rogers.com/elr-utilities/css.html",
   "keywords": ["sass, css, mixins, back-to-top"],
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "/src/_main.scss",
+  "main": "src/_main.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/Beth3346/elr-scss-back-to-top.git"
