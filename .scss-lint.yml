@@ -1,6 +1,6 @@
 # Default application configuration that all configurations inherit from.
 
-scss_files: "**/*.scss"
+scss_files: '**/*.scss'
 plugin_directories: ['.scss-linters']
 
 # List of gem names to load custom linters from (make sure they are already
@@ -25,7 +25,7 @@ linters:
     enabled: true
 
   ColorVariable:
-    enabled: true
+    enabled: false
 
   Comment:
     enabled: true
@@ -127,14 +127,34 @@ linters:
   PropertyUnits:
     enabled: true
     global: [
-      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
-      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
-      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
-      'deg', 'grad', 'rad', 'turn',            # Angle
-      'ms', 's',                               # Duration
-      'Hz', 'kHz',                             # Frequency
-      'dpi', 'dpcm', 'dppx',                   # Resolution
-      '%']                                     # Other
+        'ch',
+        'em',
+        'ex',
+        'rem', # Font-relative lengths
+        'cm',
+        'in',
+        'mm',
+        'pc',
+        'pt',
+        'px',
+        'q', # Absolute lengths
+        'vh',
+        'vw',
+        'vmin',
+        'vmax', # Viewport-percentage lengths
+        'deg',
+        'grad',
+        'rad',
+        'turn', # Angle
+        'ms',
+        's', # Duration
+        'Hz',
+        'kHz', # Frequency
+        'dpi',
+        'dpcm',
+        'dppx', # Resolution
+        '%',
+      ] # Other
     properties: {}
 
   QualifyingElement:

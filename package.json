@@ -8,16 +8,12 @@
     "email": "beth3346@gmail.com"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-babel": "^7.0.1",
-    "gulp-clean-css": "^3.9.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.1",
-    "gulp-scss-lint": "^0.6.1",
+    "gulp-scss-lint": "^1.0.0",
     "husky": "^1.0.0-rc.2",
     "node-sass": "^4.5.0",
     "path": "^0.12.7"
@@ -33,7 +29,6 @@
     "url": "https://github.com/Beth3346/elr-scss-back-to-top.git"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0",
     "elr-scss-functions": "0.1.2"
   },
   "husky": {
