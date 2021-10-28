@@ -1,34 +1,55 @@
-const gulp = require('gulp');
-const path = require('path');
-const sass = require('gulp-sass');
-const scsslint = require('gulp-scss-lint');
-const plumber = require('gulp-plumber');
-const autoprefixer = require('gulp-autoprefixer');
-const cleanCSS = require('gulp-clean-css');
+const gulp = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const plumber = require("gulp-plumber");
+const autoprefixer = require("gulp-autoprefixer");
+const cleanCSS = require("gulp-clean-css");
+const del = require("del");
 
 var paths = {
-  app: 'dist/',
-  css: 'dist/css/'
+  app: "dist/",
+  css: "dist/css/",
+  images: "dist/images/",
 };
 
-gulp.task('default', () => {
+// Clean assets
+function clean() {
+  return del(["./dist"]);
+}
+
+// Copy HTML
+function copyIndex() {
+  return gulp.src(["./public/*.html"]).pipe(gulp.dest(paths.app));
+}
+
+function copyImages() {
   return gulp
-    .src('./*.scss')
-    .pipe(scsslint())
+    .src("public/images/**/*.{gif,jpg,png,svg}")
+    .pipe(gulp.dest(paths.images));
+}
+
+gulp.task("default", () => {
+  copyImages();
+
+  return gulp
+    .src(["./public/*.scss"])
     .pipe(plumber())
     .pipe(
       sass({
-        includePaths: ['node_modules']
-      }).on('error', sass.logError)
+        includePaths: ["node_modules"],
+      }).on("error", sass.logError)
     )
     .pipe(gulp.dest(paths.css))
     .pipe(
       autoprefixer({
-        browsers: ['last 3 versions'],
-        cascade: false
+        cascade: false,
       })
     )
     .pipe(gulp.dest(paths.css))
     .pipe(cleanCSS({ debug: true }))
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest(paths.css))
+    .pipe(copyIndex());
 });
+
+exports.clean = clean;
+exports.copyIndex = copyIndex;
+exports.copyImages = copyImages;

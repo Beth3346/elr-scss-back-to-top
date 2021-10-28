@@ -1,10 +1,10 @@
-@import 'node_modules/elr-scss-functions/main';
+@import "node_modules/elr-scss-functions/src/main";
 
 @mixin elr-back-to-top($config: ()) {
   $config: extend(
     (
       bk-color: #1976d2,
-      color: white
+      color: white,
     ),
     $config
   );
