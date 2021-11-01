@@ -17,26 +17,26 @@ function clean() {
 }
 
 // Copy HTML
-function copyIndex() {
+function copyHtml() {
   return gulp.src(["./public/*.html"]).pipe(gulp.dest(paths.app));
 }
 
 function copyImages() {
   return gulp
-    .src("public/images/**/*.{gif,jpg,png,svg}")
+    .src(["public/images/**/*.{gif,jpg,png,svg}"])
     .pipe(gulp.dest(paths.images));
 }
 
-gulp.task("default", () => {
-  copyImages();
-
+function processStyles() {
   return gulp
-    .src(["./public/*.scss"])
+    .src(["public/*.scss"])
     .pipe(plumber())
     .pipe(
       sass({
         includePaths: ["node_modules"],
-      }).on("error", sass.logError)
+      })
+        .on("error", sass.logError)
+        .on("error", () => gulp.emit("error", new Error("scss compile error")))
     )
     .pipe(gulp.dest(paths.css))
     .pipe(
@@ -46,10 +46,17 @@ gulp.task("default", () => {
     )
     .pipe(gulp.dest(paths.css))
     .pipe(cleanCSS({ debug: true }))
-    .pipe(gulp.dest(paths.css))
-    .pipe(copyIndex());
+    .pipe(gulp.dest(paths.css));
+}
+
+gulp.task("default", done => {
+  copyImages();
+  copyHtml();
+  processStyles();
+  // console.log({ styles });
+  done();
 });
 
 exports.clean = clean;
-exports.copyIndex = copyIndex;
+exports.copyHtml = copyHtml;
 exports.copyImages = copyImages;
