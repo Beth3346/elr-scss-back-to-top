@@ -4,11 +4,13 @@ const plumber = require("gulp-plumber");
 const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const del = require("del");
+const uglify = require("gulp-uglify");
 
 var paths = {
   app: "dist/",
   css: "dist/css/",
   images: "dist/images/",
+  js: "dist/scripts",
 };
 
 // Clean assets
@@ -25,6 +27,10 @@ function copyImages() {
   return gulp
     .src(["public/images/**/*.{gif,jpg,png,svg}"])
     .pipe(gulp.dest(paths.images));
+}
+
+function processScripts() {
+  return gulp.src("public/script.js").pipe(uglify()).pipe(gulp.dest(paths.js));
 }
 
 function processStyles() {
@@ -53,6 +59,7 @@ gulp.task("default", done => {
   copyImages();
   copyHtml();
   processStyles();
+  // processScripts();
   // console.log({ styles });
   done();
 });
