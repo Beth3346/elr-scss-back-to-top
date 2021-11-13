@@ -13,7 +13,7 @@
     "test": "gulp clean && gulp",
     "update": "ncu",
     "update:install": "ncu -u && npm install",
-    "publish": "np"
+    "np": "np"
   },
   "devDependencies": {
     "del": "^6.0.0",
@@ -39,6 +39,10 @@
   },
   "dependencies": {
     "elr-scss-functions": "1.1.6"
+  },
+  "np": {
+    "yarn": false,
+    "branch": "main"
   },
   "browserslist": [
     "last 3 versions"
