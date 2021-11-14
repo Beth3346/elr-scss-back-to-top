@@ -3,6 +3,10 @@
 
 @include elr-reset;
 
+* {
+  font-family: Roboto;
+}
+
 .wrapper {
   max-width: 1000px;
   margin: auto;
