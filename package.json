@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "elr-scss-functions": "1.1.6",
-    "elr-scss-reset": "^0.0.6"
+    "elr-scss-reset": "^0.0.7"
   },
   "np": {
     "yarn": false,
