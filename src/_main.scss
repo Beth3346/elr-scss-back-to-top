@@ -1,15 +1,16 @@
 @import "elr-scss-functions/src/main";
+@import "elr-scss-config/src/main";
 
 @mixin elr-back-to-top($config: ()) {
   $config: extend(
     (
-      bk-color: #1976d2,
-      color: white,
+      background-color: $primary-color,
+      color: $white,
     ),
     $config
   );
 
-  $bk-color: map-get($config, bk-color);
+  $background-color: map-get($config, background-color);
   $color: map-get($config, color);
 
   width: 50px;
@@ -21,7 +22,7 @@
   cursor: pointer;
   padding: 0 0 5px;
   line-height: 0;
-  background-color: rgba($bk-color, 0.7);
+  background-color: rgba($background-color, 0.7);
   font-size: 36px;
 
   @media (max-width: 350px) {
@@ -29,6 +30,6 @@
   }
 
   &:hover {
-    background-color: rgba($bk-color, 1);
+    background-color: rgba($background-color, 1);
   }
 }
