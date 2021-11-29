@@ -1,38 +1,43 @@
-@import "src/main";
+@import "elr-scss-config/src/main";
 @import "elr-scss-reset/src/main";
+@import "elr-scss-base/src/main";
+@import "src/main";
 
 @include elr-reset;
+@include elr-base;
 
 * {
   font-family: Roboto;
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: $content-width;
   margin: auto;
-  padding: 20px;
+  padding: ($base-fontsize * 1.5);
+}
+
+.main-heading,
+.subheading {
+  border-bottom: $border;
+  padding-bottom: $base-fontsize * 0.5;
+  margin-bottom: $base-fontsize;
+  width: 100%;
 }
 
 .main-heading {
-  font-size: 36px;
+  font-size: $base-fontsize * 2;
   font-weight: 700;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  width: 100%;
 }
 
 .subheading {
-  font-size: 16px;
-  color: #666;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  width: 100%;
+  font-size: $base-fontsize * 1.5;
+  font-weight: 900;
+  color: $primary-color;
 }
 
 .demo-content {
   position: relative;
-  padding: 20px 0;
+  padding: ($base-fontsize * 1.5) 0;
 }
 
 .elr-back-to-top {
