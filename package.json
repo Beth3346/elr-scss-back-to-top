@@ -21,7 +21,9 @@
     "np": "^7.6.0",
     "npm-check-updates": "^12.0.2",
     "parcel": "^2.0.1",
-    "sass": "^1.44.0"
+    "sass": "^1.44.0",
+    "elr-scss-base": "^0.0.9",
+    "elr-scss-reset": "^0.0.8"
   },
   "homepage": "http://www.elizabeth-rogers.com/elr-utilities/css.html",
   "keywords": [
@@ -33,10 +35,8 @@
     "url": "https://github.com/Beth3346/elr-scss-back-to-top.git"
   },
   "dependencies": {
-    "elr-scss-base": "^0.0.9",
     "elr-scss-config": "^1.1.2",
-    "elr-scss-functions": "1.1.6",
-    "elr-scss-reset": "^0.0.8"
+    "elr-scss-functions": "1.1.6"
   },
   "np": {
     "yarn": false,
