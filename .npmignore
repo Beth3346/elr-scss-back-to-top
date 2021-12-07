@@ -22,3 +22,5 @@
 /.husky
 /.github
 /.parcel-cache
+/.netlify
+/dist
