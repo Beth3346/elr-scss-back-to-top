@@ -1,7 +1,7 @@
 # Back to Top
 
 [![npm version](http://img.shields.io/npm/v/elr-scss-back-to-top.svg)](https://www.npmjs.org/package/elr-scss-back-to-top)
-[![Build Status](https://github.com/elr-scss-back-to-top/workflows/CI/badge.svg)](https://github.com/elr-scss-back-to-top/actions?workflow=CI)
+[![CI](https://github.com/Beth3346/elr-scss-back-to-top/actions/workflows/node.js.yml/badge.svg)](https://github.com/Beth3346/elr-scss-back-to-top/actions/workflows/node.js.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-back-to-top-button.svg?style=flat)](https://npmjs.com/package/elr-scss-back-to-top-button)
 
